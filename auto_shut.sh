@@ -30,8 +30,8 @@ else
                 echo "Current time is past the shutdown time, shutting down."
                 # Create a check file
                 touch "$CHECK_FILE"
-                # Shutdown command
-                /sbin/shutdown now
+                # Shutdown command with 10 minutes grace-period
+                /sbin/shutdown -h +10
 
                 echo "Shutdown time reached. Shutting down now."
         else
