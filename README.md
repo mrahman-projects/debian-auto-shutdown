@@ -77,8 +77,11 @@
    sudo /usr/local/bin/auto_shut.sh
    ```
 
-### Additional Tips
+### Potential Risk of Consequetive Reboot of Server
+In case if your OS keeps reloading during the booting process, that means you need manual intervention. This situation can arise when the SHUTDOWN_DATETIME is past compared to CURRENT_DATETIME, and the CHECK_FILE process is failing.
+Login the OS in RECOVERY mode, and change the value of SHUTDOWN_DATETIME to a future date. Ensure the required permission and command to create the CHECK_FILE before the test again.
 
+### Additional Tips
 - **Backup Your Script:** Regularly back up your script and any other critical configuration files.
 - **Documentation:** Keep documentation of the script's purpose and functionality, especially if other administrators will be managing the server.
 - **Security Practices:** As this script has significant power over the system's operation, ensure it's secured against unauthorized access or modification. 
