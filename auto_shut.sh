@@ -35,9 +35,9 @@ else
 
                 echo "Shutdown time reached. Shutting down now."
         else
-                echo "Current time is before the shutdown time, shutdown scheduled in $TIME_DIFF minutes."
                 # Get the time different in minutes
                 TIME_DIFF=$((($SHUTDOWN_TIMESTAMP - $CURRENT_TIMESTAMP) / 60))
+                echo "Current time is before the shutdown time, shutdown scheduled in $TIME_DIFF minutes."
                 # Schedule the shutdown in the difference time
                 /sbin/shutdown -h +$TIME_DIFF
         fi
